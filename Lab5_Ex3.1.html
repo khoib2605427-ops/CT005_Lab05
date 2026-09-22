@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lợi Ích Của Công Nghệ Số Trong Học Tập</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50: '#f0f4ff',
+                            100: '#e0e9fe',
+                            800: '#1e3a8a',
+                            900: '#0f172a',
+                            950: '#070d19',
+                        },
+                        cyanBrand: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-header {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .tab-btn.active {
+            background-color: #2563eb;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+        }
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, #1e3a8a, #06b6d4);
+            padding: 2px;
+            border-radius: 1.5rem;
+        }
+        .card-inner {
+            background: #ffffff;
+            border-radius: calc(1.5rem - 2px);
+        }
+        .dark .card-inner {
+            background: #0f172a;
+        }
+        .pulse-glow {
+            animation: pulseGlow 3s infinite alternate;
+        }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 15px rgba(6, 182, 212, 0.2); }
+            100% { box-shadow: 0 0 30px rgba(37, 99, 235, 0.5); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col justify-between antialiased selection:bg-cyan-500 selection:text-white transition-colors duration-300">
+
+    <header class="sticky top-0 z-40 glass-header border-b border-slate-800 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-cyan-500/20">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg sm:text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
+                        Công Nghệ Số trong Giáo Dục
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/30">Chuyển Đổi Số</span>
+                    </h1>
+                    <p class="text-xs text-slate-400 font-medium">Lợi Ích Của Công Nghệ Số Trong Học Tập</p>
+                </div>
+            </div>
+
+            <!-- Global Action Controls -->
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleDarkMode()" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-all text-sm border border-slate-700" title="Chuyển chế độ Sáng/Tối">
+                    <i id="theme-icon" class="fa-solid fa-moon"></i>
+                </button>
+                <!-- Audio Narrator -->
+                <button onclick="readSummaryText()" id="audio-narrator-btn" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 hover:text-cyan-300 transition-all text-xs font-semibold flex items-center gap-2 border border-slate-700">
+                    <i class="fa-solid fa-volume-high text-sm"></i>
+                    <span id="audio-btn-text">Nghe Tóm Tắt</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-10">
+
+        <!-- Hero Banner -->
+        <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-navy-900 via-indigo-950 to-slate-900 text-white p-8 sm:p-12 shadow-2xl border border-slate-800 pulse-glow">
+            <!-- Background Decorative Grid -->
+            <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:20px_20px]"></div>
+            
+            <div class="relative z-10 max-w-3xl space-y-5">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 backdrop-blur-md">
+                    <i class="fa-solid fa-sparkles"></i> Giáo Dục Thời Đại 4.0
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-black leading-tight tracking-tight text-white drop-shadow-md">
+                    LỢI ÍCH CỦA CÔNG NGHỆ SỐ <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300">TRONG HỌC TẬP</span>
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+                    Công nghệ số biến đổi sâu sắc cách chúng ta tiếp cận và làm chủ tri thức. Hãy cùng khám phá 4 giá trị cốt lõi giúp học sinh, sinh viên học tập chủ động, sáng tạo và hiệu quả hơn.
+                </p>
+            </div>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <nav class="flex items-center bg-slate-200 dark:bg-slate-900 p-1.5 rounded-2xl overflow-x-auto gap-1.5 text-xs sm:text-sm font-semibold border border-slate-300 dark:border-slate-800 shadow-inner">
+            <button onclick="switchTab('tab-all')" id="btn-tab-all" class="tab-btn active px-4 py-2.5 rounded-xl transition-all duration-200 whitespace-nowrap flex items-center gap-2">
+                <i class="fa-solid fa-border-all"></i> Tất Cả
+            </button>
+            <button onclick="switchTab('tab-infographic')" id="btn-tab-infographic" class="tab-btn px-4 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all duration-200 whitespace-nowrap flex items-center gap-2">
+                <i class="fa-solid fa-image"></i> Infographic Đồ Họa
+            </button>
+            <button onclick="switchTab('tab-cards')" id="btn-tab-cards" class="tab-btn px-4 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all duration-200 whitespace-nowrap flex items-center gap-2">
+                <i class="fa-solid fa-cubes"></i> 4 Lợi Ích Cốt Lõi
+            </button>
+            <button onclick="switchTab('tab-video')" id="btn-tab-video" class="tab-btn px-4 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all duration-200 whitespace-nowrap flex items-center gap-2">
+                <i class="fa-brands fa-youtube text-red-500"></i> Video Minh Họa
+            </button>
+            <button onclick="switchTab('tab-interactive')" id="btn-tab-interactive" class="tab-btn px-4 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all duration-200 whitespace-nowrap flex items-center gap-2">
+                <i class="fa-solid fa-gamepad text-emerald-500"></i> Ôn Tập & Ghi Chú
+            </button>
+        </nav>
+
+        <!-- TAB 1: Infographic Section -->
+        <section id="tab-infographic" class="tab-content space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 gap-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+                        <i class="fa-solid fa-file-image text-blue-600 dark:text-cyan-400"></i>
+                        Infographic Đồ Họa Trực Quan
+                    </h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Hình ảnh được mã hóa Base64/SVG trực tiếp – Hiển thị tức thì không cần tải lại file ngoài</p>
+                </div>
+                <!-- Action Controls for Infographic -->
+                <div class="flex items-center gap-2.5 flex-wrap">
+                    <button onclick="openLightbox()" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-xs sm:text-sm shadow-md transition flex items-center gap-2">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Xem Phóng To
+                    </button>
+                    <button onclick="downloadInfographicImage()" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 text-white rounded-xl font-semibold text-xs sm:text-sm shadow-md transition flex items-center gap-2">
+                        <i class="fa-solid fa-download"></i> Tải Ảnh
+                    </button>
+                    <!-- Custom Image Upload Option -->
+                    <label class="px-3.5 py-2.5 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-xl font-semibold text-xs sm:text-sm cursor-pointer transition flex items-center gap-2 border border-slate-300 dark:border-slate-700">
+                        <i class="fa-solid fa-upload"></i> Đổi file ảnh
+                        <input type="file" id="image-uploader" accept="image/*" class="hidden" onchange="handleImageUpload(event)">
+                    </label>
+                </div>
+            </div>
+
+            <!-- Embedded Image Viewer Container -->
+            <div class="bg-slate-900/90 rounded-3xl p-4 sm:p-8 flex justify-center items-center shadow-2xl relative overflow-hidden group border border-slate-800">
+                <div class="relative max-w-xl w-full group cursor-pointer" onclick="openLightbox()">
+                    
+                    <!-- Embedded High-Resolution Base64 SVG Data URI image directly in img src -->
+                    <img id="main-infographic-img" 
+                         src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 1420' width='800' height='1420'><defs><linearGradient id='bgDark' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%230b192c'/><stop offset='50%25' stop-color='%230f2b82'/><stop offset='100%25' stop-color='%230284c7'/></linearGradient><linearGradient id='cardGrad' x1='0%25' y1='0%25' x2='100%25' y2='0%25'><stop offset='0%25' stop-color='%231e40af' stop-opacity='0.85'/><stop offset='100%25' stop-color='%233b82f6' stop-opacity='0.35'/></linearGradient><filter id='sh' x='-10%25' y='-10%25' width='120%25' height='120%25'><feDropShadow dx='0' dy='6' stdDeviation='8' flood-opacity='0.35'/></filter></defs><rect width='800' height='680' fill='%23f0f7ff'/><text x='400' y='95' text-anchor='middle' fill='%230f172a' font-family='sans-serif' font-weight='900' font-size='42'>LỢI ÍCH CỦA</text><text x='400' y='155' text-anchor='middle' fill='%231d4ed8' font-family='sans-serif' font-weight='900' font-size='46'>CÔNG NGHỆ SỐ</text><text x='400' y='215' text-anchor='middle' fill='%230f172a' font-family='sans-serif' font-weight='900' font-size='42'>TRONG HỌC TẬP</text><g transform='translate(0, 30)'><path d='M400 230 C365 230 345 255 345 280 C320 280 300 300 300 330 C300 360 325 380 355 380 L445 380 C475 380 500 360 500 330 C500 300 480 280 455 280 C455 255 435 230 400 230 Z' fill='%233b82f6'/><path d='M388 325 L388 290 L376 290 L394 265 L412 290 L400 290 L400 325 Z' fill='%2322c55e'/><path d='M412 290 L412 325 L424 325 L406 350 L388 325 L400 325 L400 290 Z' fill='%23ffffff'/><rect x='230' y='330' width='340' height='210' rx='16' fill='%231e293b' filter='url(%23sh)'/><rect x='245' y='345' width='310' height='180' rx='8' fill='%23ffffff'/><rect x='260' y='360' width='160' height='100' rx='6' fill='%23eff6ff'/><circle cx='340' cy='410' r='22' fill='%232563eb'/><polygon points='334,400 352,410 334,420' fill='%23ffffff'/><rect x='100" y='430' width='100' height='20' rx='4' fill='%233b82f6'/><rect x='90' y='453' width='115' height='22' rx='4' fill='%2310b981'/><rect x='95' y='478' width='110' height='20' rx='4' fill='%23f59e0b'/><path d='M350 535 L480 550 L340 555 Z' fill='%23f59e0b'/></g><rect x='0' y='680' width='800' height='740' fill='url(%23bgDark)'/><g transform='translate(60, 720)'><rect x='0' y='0' width='680' height='115' rx='58' fill='url(%23cardGrad)' stroke='%2360a5fa' stroke-opacity='0.6' stroke-width='2'/><circle cx='70' cy='58' r='42' fill='%232563eb' filter='url(%23sh)'/><circle cx='70' cy='58' r='22' fill='none' stroke='%23ffffff' stroke-width='3'/><ellipse cx='70' cy='58' rx='10' ry='22' fill='none' stroke='%23ffffff' stroke-width='2'/><line x1='48' y1='58' x2='92' y2='58' stroke='%23ffffff' stroke-width='2'/><text x='135' y='68' fill='%23ffffff' font-family='sans-serif' font-weight='800' font-size='26'>Tiếp cận kiến thức mọi lúc, mọi nơi</text></g><g transform='translate(60, 880)'><rect x='0' y='0' width='680' height='115' rx='58' fill='url(%23cardGrad)' stroke='%2334d399' stroke-opacity='0.6' stroke-width='2'/><circle cx='70' cy='58' r='42' fill='%23059669' filter='url(%23sh)'/><circle cx='70' cy='48' r='10' fill='%23ffffff'/><path d='M52 70 C52 60 60 57 70 57 C80 57 88 60 88 70 Z' fill='%23ffffff'/><text x='135' y='68' fill='%23ffffff' font-family='sans-serif' font-weight='800' font-size='25'>Học tập cá nhân hóa theo tốc độ riêng</text></g><g transform='translate(60, 1040)'><rect x='0' y='0' width='680' height='115' rx='58' fill='url(%23cardGrad)' stroke='%23fbbf24' stroke-opacity='0.6' stroke-width='2'/><circle cx='70' cy='58' r='42' fill='%23d97706' filter='url(%23sh)'/><polygon points='62,43 84,58 62,73' fill='%23ffffff'/><text x='135' y='68' fill='%23ffffff' font-family='sans-serif' font-weight='800' font-size='25'>Tương tác trực quan và sinh động hơn</text></g><g transform='translate(60, 1200)'><rect x='0' y='0' width='680' height='115' rx='58' fill='url(%23cardGrad)' stroke='%2338bdf8' stroke-opacity='0.6' stroke-width='2'/><circle cx='70' cy='58' r='42' fill='%230284c7' filter='url(%23sh)'/><circle cx='60' cy='58' r='6' fill='%23ffffff'/><circle cx='80' cy='45' r='6' fill='%23ffffff'/><circle cx='80' cy='71' r='6' fill='%23ffffff'/><line x1='60' y1='58' x2='80' y2='45' stroke='%23ffffff' stroke-width='2.5'/><line x1='60' y1='58' x2='80' y2='71' stroke='%23ffffff' stroke-width='2.5'/><text x='135' y='68' fill='%23ffffff' font-family='sans-serif' font-weight='800' font-size='25'>Kết nối, chia sẻ và cộng tác dễ dàng</text></g></svg>" 
+                         alt="Infographic Lợi Ích Của Công Nghệ Số Trong Học Tập" 
+                         class="w-full h-auto rounded-2xl shadow-2xl transition-transform duration-300 group-hover:scale-[1.01] border border-slate-700"
+                    >
+
+                    <!-- Hover Overlay Prompt -->
+                    <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl flex items-center justify-center gap-2 text-white font-bold text-sm sm:text-base backdrop-blur-xs">
+                        <i class="fa-solid fa-expand text-xl"></i> Click để mở xem toàn màn hình
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: 4 Key Benefit Interactive Cards -->
+        <section id="tab-cards" class="tab-content space-y-6">
+            <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+                    <i class="fa-solid fa-layer-group text-blue-600 dark:text-cyan-400"></i>
+                    4 Lợi Ích Cốt Lõi Của Công Nghệ Số
+                </h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Nhấp vào từng thẻ để mở rộng ví dụ minh họa và nghe đọc nội dung</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Benefit Card 1 -->
+                <div class="gradient-border shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="card-inner p-6 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl font-black">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+                                    01. Tiếp Cận Kiến Thức
+                                </span>
+                            </div>
+                            
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                                Tiếp cận kiến thức mọi lúc, mọi nơi
+                            </h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                                Học sinh có thể học ở bất kỳ đâu thông qua kết nối Internet. Kho tài liệu trực tuyến phong phú, từ sách điện tử, bài giảng video đến các khóa học toàn cầu đều nằm trong tầm tay.
+                            </p>
+
+                            <!-- Collapsible Detailed Examples -->
+                            <div id="detail-1" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-2">
+                                <p><strong class="text-slate-700 dark:text-slate-200">Ví dụ thực tế:</strong> Sử dụng các nền tảng như Coursera, edX, YouTube Edu hoặc thư viện số trường học để xem lại bài giảng lúc 22h đêm hoặc khi đang di chuyển.</p>
+                                <p><strong class="text-slate-700 dark:text-slate-200">Giá trị mang lại:</strong> Xóa bỏ hoàn toàn khoảng cách địa lý giữa nông thôn và thành thị.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+                            <button onclick="toggleDetail('detail-1', this)" class="text-xs font-bold text-blue-600 dark:text-cyan-400 hover:underline flex items-center gap-1">
+                                <span>Xem chi tiết ví dụ</span>
+                                <i class="fa-solid fa-chevron-down transition-transform"></i>
+                            </button>
+                            <button onclick="speakText('Tiếp cận kiến thức mọi lúc, mọi nơi. Học tập qua Internet với kho tài liệu phong phú toàn cầu.')" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-cyan-400 transition" title="Nghe đọc">
+                                <i class="fa-solid fa-volume-low"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit Card 2 -->
+                <div class="gradient-border shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="card-inner p-6 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl font-black">
+                                    <i class="fa-solid fa-sliders"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                                    02. Cá Nhân Hóa
+                                </span>
+                            </div>
+                            
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                                Học tập cá nhân hóa theo tốc độ riêng
+                            </h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                                Mỗi người học có nhịp độ tiếp thu khác nhau. Công nghệ cho phép tự do điều chỉnh tốc độ bài giảng, làm lại các bài tập chưa hiểu và lựa chọn lộ trình phù hợp năng lực bản thân.
+                            </p>
+
+                            <!-- Collapsible Detailed Examples -->
+                            <div id="detail-2" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-2">
+                                <p><strong class="text-slate-700 dark:text-slate-200">Ví dụ thực tế:</strong> Hệ thống AI phân tích kết quả làm bài trắc nghiệm để tự động gợi ý bài tập nâng cao hoặc bài giảng ôn tập kiến thức hổng.</p>
+                                <p><strong class="text-slate-700 dark:text-slate-200">Giá trị mang lại:</strong> Không ai bị bỏ lại phía sau, học sinh tự tin hơn vào năng lực cá nhân.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+                            <button onclick="toggleDetail('detail-2', this)" class="text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline flex items-center gap-1">
+                                <span>Xem chi tiết ví dụ</span>
+                                <i class="fa-solid fa-chevron-down transition-transform"></i>
+                            </button>
+                            <button onclick="speakText('Học tập cá nhân hóa theo tốc độ riêng. Tự do điều chỉnh tiến độ và chọn bài tập phù hợp năng lực.')" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition" title="Nghe đọc">
+                                <i class="fa-solid fa-volume-low"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit Card 3 -->
+                <div class="gradient-border shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="card-inner p-6 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl font-black">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+                                    03. Tương Tác Trực Quan
+                                </span>
+                            </div>
+                            
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                                Tương tác trực quan và sinh động hơn
+                            </h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                                Việc biến lý thuyết thành hình ảnh, video minh họa, mô phỏng 3D, thực tế ảo (AR/VR) và trò chơi học tập (Gamification) giúp học sinh hào hứng và ghi nhớ lâu hơn.
+                            </p>
+
+                            <!-- Collapsible Detailed Examples -->
+                            <div id="detail-3" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-2">
+                                <p><strong class="text-slate-700 dark:text-slate-200">Ví dụ thực tế:</strong> Quan sát mô hình 3D trái tim người đang đập trong môn Sinh học hoặc làm thí nghiệm hóa học ảo không sợ cháy nổ.</p>
+                                <p><strong class="text-slate-700 dark:text-slate-200">Giá trị mang lại:</strong> Chuyển từ học thụ động sang trải nghiệm trực quan đa giác quan.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+                            <button onclick="toggleDetail('detail-3', this)" class="text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1">
+                                <span>Xem chi tiết ví dụ</span>
+                                <i class="fa-solid fa-chevron-down transition-transform"></i>
+                            </button>
+                            <button onclick="speakText('Tương tác trực quan và sinh động hơn. Sử dụng mô phỏng 3D, video và gamification giúp ghi nhớ sâu.')" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 transition" title="Nghe đọc">
+                                <i class="fa-solid fa-volume-low"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit Card 4 -->
+                <div class="gradient-border shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="card-inner p-6 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-xl font-black">
+                                    <i class="fa-solid fa-users-viewfinder"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">
+                                    04. Kết Nối & Cộng Tác
+                                </span>
+                            </div>
+                            
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                                Kết nối, chia sẻ và cộng tác dễ dàng
+                            </h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                                Học sinh dễ dàng làm việc nhóm trực tuyến, thảo luận đề tài qua Google Classroom, Microsoft Teams hay Zoom. Nhận phản hồi và trao đổi tức thì với giáo viên và bạn bè.
+                            </p>
+
+                            <!-- Collapsible Detailed Examples -->
+                            <div id="detail-4" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-2">
+                                <p><strong class="text-slate-700 dark:text-slate-200">Ví dụ thực tế:</strong> Cùng chỉnh sửa báo cáo thuyết trình trên Google Slides theo thời gian thực dù các thành viên ở các tỉnh thành khác nhau.</p>
+                                <p><strong class="text-slate-700 dark:text-slate-200">Giá trị mang lại:</strong> Rèn luyện kỹ năng làm việc nhóm trực tuyến – năng lực thiết yếu trong thời đại toàn cầu hóa.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+                            <button onclick="toggleDetail('detail-4', this)" class="text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline flex items-center gap-1">
+                                <span>Xem chi tiết ví dụ</span>
+                                <i class="fa-solid fa-chevron-down transition-transform"></i>
+                            </button>
+                            <button onclick="speakText('Kết nối, chia sẻ và cộng tác dễ dàng. Môi trường thảo luận nhóm trực tuyến và nhận phản hồi tức thì.')" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition" title="Nghe đọc">
+                                <i class="fa-solid fa-volume-low"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TAB 3: Embedded YouTube Video Section -->
+        <section id="tab-video" class="tab-content space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 gap-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+                        <i class="fa-brands fa-youtube text-red-600"></i>
+                        Video Bài Giảng Tương Tác YouTube
+                    </h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Xem video giải thích chi tiết về chuyển đổi số giáo dục (Trình phát chuẩn 16:9)</p>
+                </div>
+
+                <!-- YouTube Direct Fallback Button -->
+                <a href="https://youtu.be/fuGaqdm0Zpk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl font-semibold text-xs sm:text-sm shadow-md transition self-start sm:self-auto">
+                    <i class="fa-brands fa-youtube text-base"></i>
+                    <span>Mở trực tiếp trên YouTube</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Video Player Container (2 cols) -->
+                <div class="lg:col-span-2 bg-slate-900 rounded-3xl p-3 sm:p-5 shadow-2xl border border-slate-800 flex flex-col justify-between">
+                    <div class="relative w-full rounded-2xl overflow-hidden aspect-video bg-black flex items-center justify-center shadow-inner">
+                        <!-- Embedded YouTube Iframe -->
+                        <iframe 
+                            id="yt-iframe"
+                            class="absolute top-0 left-0 w-full h-full border-0" 
+                            src="https://www.youtube.com/embed/fuGaqdm0Zpk?enablejsapi=1&rel=0" 
+                            title="Lợi Ích Của Công Nghệ Số Trong Học Tập" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <!-- Notice Bar -->
+                    <div class="mt-4 p-3.5 bg-slate-800/80 rounded-xl flex items-center justify-between gap-3 text-xs text-slate-300 border border-slate-700/60">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-cyan-400 text-base"></i>
+                            <span>Trình phát hỗ trợ độ phân giải Full HD và phím tắt điều khiển YouTube.</span>
+                        </div>
+                        <span class="font-mono bg-slate-950 px-2 py-1 rounded text-cyan-300 font-bold">16:9 HD</span>
+                    </div>
+                </div>
+
+                <!-- Video Chapters & Summary Panel (1 col) -->
+                <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-md flex flex-col justify-between space-y-4">
+                    <div>
+                        <h4 class="text-base font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-list-ol text-blue-600 dark:text-cyan-400"></i>
+                            Nội Dung Chính Trong Video
+                        </h4>
+                        <div class="space-y-2.5 text-xs sm:text-sm">
+                            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-slate-800 transition cursor-pointer border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                                <span class="font-medium text-slate-700 dark:text-slate-200">01. Tổng quan chuyển đổi số giáo dục</span>
+                                <span class="font-mono font-bold text-blue-600 dark:text-cyan-400">0:00</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-slate-800 transition cursor-pointer border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                                <span class="font-medium text-slate-700 dark:text-slate-200">02. Tiếp cận tri thức không giới hạn</span>
+                                <span class="font-mono font-bold text-blue-600 dark:text-cyan-400">1:20</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-slate-800 transition cursor-pointer border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                                <span class="font-medium text-slate-700 dark:text-slate-200">03. Ứng dụng AI cá nhân hóa lộ trình</span>
+                                <span class="font-mono font-bold text-blue-600 dark:text-cyan-400">2:45</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-slate-800 transition cursor-pointer border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                                <span class="font-medium text-slate-700 dark:text-slate-200">04. Học qua mô phỏng 3D & Gamification</span>
+                                <span class="font-mono font-bold text-blue-600 dark:text-cyan-400">4:10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-gradient-to-r from-blue-900/40 to-indigo-900/40 border border-blue-500/30 text-xs space-y-1">
+                        <p class="font-bold text-cyan-300">💡 Lời khuyên học tập:</p>
+                        <p class="text-slate-300">Kết hợp ghi chép sơ đồ tư duy (Mindmap) trong khi xem video để tối ưu hóa khả năng ghi nhớ.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: Interactive Quiz & Notes Section -->
+        <section id="tab-interactive" class="tab-content space-y-8">
+            
+            <!-- Quiz Block -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+                <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+                            <i class="fa-solid fa-clipboard-question text-emerald-500"></i>
+                            Kiểm Tra Nhanh Kiến Thức
+                        </h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm">Trả lời 3 câu hỏi trắc nghiệm để củng cố hiểu biết của bạn</p>
+                    </div>
+                    <span id="quiz-score" class="px-4 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-xs border border-slate-300 dark:border-slate-700">
+                        Điểm số: 0/3
+                    </span>
+                </div>
+
+                <div class="space-y-6 text-sm">
+                    <!-- Q1 -->
+                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-3">
+                        <p class="font-bold text-slate-800 dark:text-slate-100">Câu 1: Việc tiếp cận kiến thức mọi lúc, mọi nơi giúp giải quyết vấn đề gì lớn nhất?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <button onclick="checkQuiz(1, 'A', this)" class="quiz-opt-1 text-left p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 transition">A. Rào cản không gian và thời gian học</button>
+                            <button onclick="checkQuiz(1, 'B', this)" class="quiz-opt-1 text-left p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 transition">B. Giảm học phí xuống 0 đồng</button>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-3">
+                        <p class="font-bold text-slate-800 dark:text-slate-100">Câu 2: Yếu tố nào giúp việc tương tác trực quan trở nên hấp dẫn hơn?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <button onclick="checkQuiz(2, 'A', this)" class="quiz-opt-2 text-left p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 transition">A. Chỉ đọc sách giáo khoa giấy</button>
+                            <button onclick="checkQuiz(2, 'B', this)" class="quiz-opt-2 text-left p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 transition">B. Mô phỏng 3D, Video & VR/Gamification</button>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-3">
+                        <p class="font-bold text-slate-800 dark:text-slate-100">Câu 3: Công cụ nào hỗ trợ cộng tác nhóm trực tuyến hiệu quả?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <button onclick="checkQuiz(3, 'A', this)" class="quiz-opt-3 text-left p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 transition">A. Google Classroom, MS Teams, Zoom</button>
+                            <button onclick="checkQuiz(3, 'B', this)" class="quiz-opt-3 text-left p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 transition">B. Trò chơi offline không kết nối mạng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reflection Notes Block -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-pen-to-square text-cyan-500"></i>
+                    Sổ Tay Ghi Chú Cá Nhân
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Lưu lại suy nghĩ hoặc ứng dụng công nghệ số trong kế hoạch học tập của riêng bạn (Tự động lưu vào trình duyệt)</p>
+                
+                <textarea id="user-notes" rows="4" placeholder="Nhập ghi chú của bạn tại đây..." class="w-full p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition text-sm"></textarea>
+                
+                <div class="flex items-center justify-between">
+                    <button onclick="saveUserNotes()" class="px-5 py-2.5 bg-cyan-600 hover:bg-cyan-700 text-white rounded-xl font-semibold text-xs sm:text-sm shadow-md transition flex items-center gap-2">
+                        <i class="fa-solid fa-floppy-disk"></i> Lưu Ghi Chú
+                    </button>
+                    <span id="notes-status" class="text-xs font-semibold text-emerald-500 hidden">✓ Đã lưu thành công!</span>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Lightbox Modal Container -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300">
+        <div class="relative max-w-5xl w-full max-h-[92vh] flex flex-col items-center justify-center">
+            
+            <!-- Floating Modal Controls -->
+            <div class="absolute -top-12 right-0 flex items-center gap-2 z-10">
+                <button onclick="zoomModalImage(1.2)" class="text-white bg-slate-800/90 hover:bg-slate-700 w-9 h-9 rounded-xl flex items-center justify-center text-sm transition" title="Phóng to">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button onclick="zoomModalImage(0.8)" class="text-white bg-slate-800/90 hover:bg-slate-700 w-9 h-9 rounded-xl flex items-center justify-center text-sm transition" title="Thu nhỏ">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+                <button onclick="resetModalImage()" class="text-white bg-slate-800/90 hover:bg-slate-700 w-9 h-9 rounded-xl flex items-center justify-center text-sm transition" title="Đặt lại">
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+                <button onclick="downloadInfographicImage()" class="text-white bg-blue-600 hover:bg-blue-700 px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow">
+                    <i class="fa-solid fa-download"></i> Tải ảnh
+                </button>
+                <button onclick="closeLightbox()" class="text-white bg-red-600 hover:bg-red-700 w-9 h-9 rounded-xl flex items-center justify-center text-base transition ml-2" title="Đóng modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Lightbox Scrollable Frame -->
+            <div class="w-full max-h-[85vh] overflow-auto rounded-2xl bg-slate-900 shadow-2xl p-2 border border-slate-800 flex items-center justify-center">
+                <img id="lightbox-img" src="" alt="Infographic Fullview" class="max-w-full h-auto rounded-xl transition-transform duration-200">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 mt-16 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs sm:text-sm space-y-3">
+            <div class="flex justify-center items-center gap-2 text-cyan-400 font-bold">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Lợi Ích Của Công Nghệ Số Trong Học Tập</span>
+            </div>
+            <p class="text-slate-400">Thiết kế chuẩn Responsive – Tương thích hoàn hảo trên Điện thoại, Máy tính bảng và PC.</p>
+            <p class="text-slate-500 font-mono text-xs">© 2026 Trang Web Học Tập Số. Tất cả dữ liệu được nhúng tự chứa trực tiếp.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentScale = 1;
+
+        // Dark Mode Toggle Logic
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.className = 'fa-solid fa-moon';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                themeIcon.className = 'fa-solid fa-sun text-amber-400';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Apply saved theme preference
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.getElementById('theme-icon').className = 'fa-solid fa-sun text-amber-400';
+        }
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            if (tabId === 'tab-all') {
+                contents.forEach(content => content.classList.remove('hidden'));
+            } else {
+                contents.forEach(content => {
+                    if (content.id === tabId) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                });
+            }
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) activeBtn.classList.add('active');
+        }
+
+        // Lightbox Functions
+        function openLightbox() {
+            const mainImg = document.getElementById('main-infographic-img');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const modal = document.getElementById('lightbox-modal');
+            
+            lightboxImg.src = mainImg.src;
+            currentScale = 1;
+            lightboxImg.style.transform = `scale(${currentScale})`;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function zoomModalImage(factor) {
+            const lightboxImg = document.getElementById('lightbox-img');
+            currentScale *= factor;
+            if (currentScale < 0.5) currentScale = 0.5;
+            if (currentScale > 3) currentScale = 3;
+            lightboxImg.style.transform = `scale(${currentScale})`;
+        }
+
+        function resetModalImage() {
+            const lightboxImg = document.getElementById('lightbox-img');
+            currentScale = 1;
+            lightboxImg.style.transform = `scale(1)`;
+        }
+
+        // Download Infographic Image
+        function downloadInfographicImage() {
+            const mainImg = document.getElementById('main-infographic-img');
+            const link = document.createElement('a');
+            link.href = mainImg.src;
+            link.download = 'Loi_Ich_Cong_Nghe_So_Infographic.svg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Custom Image Uploader Handler
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('main-infographic-img').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Collapsible Detail Card Toggle
+        function toggleDetail(detailId, btn) {
+            const detailElem = document.getElementById(detailId);
+            const icon = btn.querySelector('i');
+            if (detailElem.classList.contains('hidden')) {
+                detailElem.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                detailElem.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Text to Speech Functionality
+        let isSpeaking = false;
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Stop active speech
+                if (isSpeaking) {
+                    isSpeaking = false;
+                    return;
+                }
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'vi-VN';
+                utterance.rate = 1.0;
+                utterance.onend = () => { isSpeaking = false; };
+                window.speechSynthesis.speak(utterance);
+                isSpeaking = true;
+            } else {
+                alert('Trình duyệt của bạn không hỗ trợ đọc văn bản tự động.');
+            }
+        }
+
+        function readSummaryText() {
+            const summary = "Lợi ích của công nghệ số trong học tập bao gồm bốn trụ cột chính: Một, Tiếp cận kiến thức mọi lúc, mọi nơi. Hai, Học tập cá nhân hóa theo tốc độ riêng. Ba, Tương tác trực quan và sinh động hơn. Bốn, Kết nối, chia sẻ và cộng tác dễ dàng.";
+            const btnText = document.getElementById('audio-btn-text');
+            if (isSpeaking) {
+                window.speechSynthesis.cancel();
+                isSpeaking = false;
+                btnText.textContent = "Nghe Tóm Tắt";
+            } else {
+                speakText(summary);
+                btnText.textContent = "Đang Đọc...";
+            }
+        }
+
+        // Quiz Score Tracker
+        const quizAnswers = { 1: 'A', 2: 'B', 3: 'A' };
+        let userScore = { 1: false, 2: false, 3: false };
+
+        function checkQuiz(questionNum, answer, btn) {
+            const buttons = document.querySelectorAll(`.quiz-opt-${questionNum}`);
+            buttons.forEach(b => {
+                b.classList.remove('bg-emerald-500', 'bg-red-500', 'text-white', 'border-emerald-500', 'border-red-500');
+            });
+
+            if (answer === quizAnswers[questionNum]) {
+                btn.classList.add('bg-emerald-500', 'text-white', 'border-emerald-500');
+                userScore[questionNum] = true;
+            } else {
+                btn.classList.add('bg-red-500', 'text-white', 'border-red-500');
+                userScore[questionNum] = false;
+            }
+
+            const total = Object.values(userScore).filter(Boolean).length;
+            document.getElementById('quiz-score').textContent = `Điểm số: ${total}/3`;
+        }
+
+        // LocalStorage Notes Saving
+        function saveUserNotes() {
+            const notes = document.getElementById('user-notes').value;
+            localStorage.setItem('user_digital_study_notes', notes);
+            const status = document.getElementById('notes-status');
+            status.classList.remove('hidden');
+            setTimeout(() => status.classList.add('hidden'), 3000);
+        }
+
+        // Load Saved Notes on Startup
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedNotes = localStorage.getItem('user_digital_study_notes');
+            if (savedNotes) {
+                document.getElementById('user-notes').value = savedNotes;
+            }
+        });
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
